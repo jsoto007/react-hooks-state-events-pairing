@@ -1,4 +1,7 @@
 import video from "../data/video.js";
+import DisplayInfo from "./DisplayInfo.js";
+import LikeDislikeBtn from "./LikeDislikeBtn"
+import Comments from "./Comments.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -8,11 +11,14 @@ function App() {
       <iframe
         width="919"
         height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src={video.embedUrl}
         frameBorder="0"
         allowFullScreen
-        title="Thinking in React"
+        title={video.title}
       />
+      <DisplayInfo />
+      <LikeDislikeBtn />
+      <Comments />
     </div>
   );
 }
