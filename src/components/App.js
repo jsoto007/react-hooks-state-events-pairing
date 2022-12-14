@@ -18,7 +18,7 @@ function App() {
       />
       <DisplayInfo />
       <LikeDislikeBtn />
-      <Comments />
+      <Comments video={video}/>
     </div>
   );
 }

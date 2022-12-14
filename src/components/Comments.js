@@ -1,20 +1,23 @@
 import React from "react";
-import video from "../data/video";
 
 
-function Comments() {
-   
-    function handleComments() {
+function Comments({ video }) {
 
-        video.map((item) => {
-            <p key={item.id} name={item.user}/>
-        })
-    }
+    const commentsArr = video.comments.map((item) => {
+        return(
+        <div key={item.id}>
+            <ul><b>{item.user}</b></ul>
+            <ul>{item.comment}</ul>
+        </div>
+        )
+    })
 
     return (
         <div>
-            <h2>Comments</h2>
-            {handleComments}
+            <h2>{commentsArr.lenght}Comments</h2>
+            <p>
+                {commentsArr}
+            </p>
         </div>
     )
 }
